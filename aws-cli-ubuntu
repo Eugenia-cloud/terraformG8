@@ -1,0 +1,5 @@
+sudo apt-get install awscli
+aws --version
+sudo apt-get install python3-pip
+pip3 install awscli --upgrade --user
+python3 -m awscli --version
