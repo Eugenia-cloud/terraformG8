@@ -1,4 +1,4 @@
 output "publicip" {
-  value = aws_instance.jenkinsec2.public_ip
+  value = aws_instance.jenkins2.public_ip
 
 }
