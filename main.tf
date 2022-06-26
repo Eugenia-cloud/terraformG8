@@ -2,7 +2,7 @@ provider "aws" {
   region = var.region
 }
 
-resource "aws_security_group" "ec2_public_security_group" {
+resource "aws_security_group" "ec2_public_security_group2" {
   name        = "EC2-Public-SG"
   description = "internet reaching access for EC2 Instances"
   vpc_id      = "vpc-060c8e0e0896c4544"
@@ -28,11 +28,11 @@ resource "aws_security_group" "ec2_public_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-resource "aws_instance" "jenkinsec2" {
+resource "aws_instance" "jenkins2" {
   instance_type   = var.instance_type
   ami             = var.ami_id
   key_name        = "tt"
-  security_groups = ["${aws_security_group.ec2_public_security_group.name}"]
+  security_groups = ["${aws_security_group.ec2_public_security_group2.name}"]
   user_data       = file("userdata.tpl")
   tags = {
     "Name" = "Auto-Jenkins",
